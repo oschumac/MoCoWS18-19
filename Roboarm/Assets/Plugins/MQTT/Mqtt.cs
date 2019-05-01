@@ -16,7 +16,8 @@ public class Mqtt : MonoBehaviour
      
     // The connection informatio n
     [SerializeField]
-    private string brokerHostname = "141.37.169.17";
+    //private string brokerHostname = "141.37.169.17";
+    private string brokerHostname = "192.168.10.92";
     [SerializeField]
     private int brokerPort = 1883;
     [SerializeField]
@@ -62,7 +63,7 @@ public class Mqtt : MonoBehaviour
         //client = new MqttClient()
         client = new MqttClient(brokerHostname, brokerPort, false, null, null, MqttSslProtocols.TLSv1_0, MyRemoteCertificateValidationCallback);
         string clientId = Guid.NewGuid().ToString();
-        //Debug.Log("About to connect using '" + userName + "' / '" + password + "'");
+        Debug.Log("About to connect using '" + userName + "' / '" + password + "'");
         try
         {
             client.Connect(clientId, userName, password);

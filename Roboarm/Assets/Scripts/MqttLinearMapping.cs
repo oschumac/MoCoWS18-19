@@ -64,6 +64,8 @@ public class MqttLinearMapping : MonoBehaviour {
         }
         set
         {
+            Debug.Log("new Val =  " + value);
+
             if (MINVALUE <= value && value <= MAXVALUE)
             {
                 this.Value = value;
@@ -94,12 +96,13 @@ public class MqttLinearMapping : MonoBehaviour {
         mqtt = FindObjectOfType<Mqtt>();
         queuedMessage = new List<float>();
         lastTimeStamp = Time.time;
-
+        Debug.Log("Mapping (toppic)= " + topic);
         if (topic == "")
             topic = gameObject.name;
-                
+        Debug.Log("Mapping (toppic)= " + topic);
+
     }
-    
+
     /// <summary>
     /// calculates the linear mapping and sends or saves the value depending on Sendmode
     /// </summary>

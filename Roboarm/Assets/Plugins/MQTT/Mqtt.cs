@@ -17,7 +17,7 @@ public class Mqtt : MonoBehaviour
     // The connection informatio n
     [SerializeField]
     //private string brokerHostname = "141.37.169.17";
-    private string brokerHostname = "192.168.10.92";
+    private string brokerHostname = "";
     [SerializeField]
     private int brokerPort = 1883;
     [SerializeField]
